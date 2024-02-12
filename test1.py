@@ -1,5 +1,6 @@
 import random
-
+import sys
+print(sys.argv)
 
 print("hi")
 print("hi")
