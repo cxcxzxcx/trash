@@ -4,12 +4,18 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- master
+  - none
 
 pool:
- name: Azure Pipelines
- demands: MyAgentCap
+  name: Azure Pipelines
+  demands: MyAgentCap
+  
 
 steps:
   - script: 
       echo "123"
+
+  - task: PythonScript@0
+    inputs:
+      scriptSource: 'filePath'
+      scriptPath: '.\test1.py'
